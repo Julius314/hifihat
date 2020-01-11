@@ -1,0 +1,14 @@
+[Unit]
+Description=HifiHat Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=no
+RestartSec=1
+ExecStart=/home/pi/hifihat/socket/hifihat
+ExecStop=pkill -2 hifihat&&sudo rm /run/lock/hifihat.lock
+
+[Install]
+WantedBy=multi-user.target

@@ -6,10 +6,9 @@ sudo apt-get -y install wiringpi i2c-tools libi2c-dev
 sudo sh -c "echo 'dtparam=i2c_arm=on' >> /boot/config.txt"
 sudo sh -c "echo 'dtparam=i2c1=on' >> /boot/config.txt"
 
-#   add "sudo modprobe i2c-bcm2708" to etc/rc.local
-##needs to be appended as second last line!
-#sudo sh -c "echo 'sudo modprobe i2c-bcm2708' >> /etc/rc.local"
-
+# TODO: 
+#   add "sudo modprobe i2c-bcm2708" to etc/rc.local as second last line (before exit 0)
+#sudo ed -s /etc/rc.local <<< $"$-2a\nsudo modprobe i2c-bcm2708\n.\nwq"
 
 #add i2c-bcm2708 && i2c-dev to /etc/modules
 sudo sh -c "echo 'i2c-bcm2708' >> /etc/modules"

@@ -1,7 +1,7 @@
 // Thread implementation of hifihat to change coefficients during operation
 
 
-//kompilieren: gcc -Ofast run.c hifihat.c -o XXX -li2c -lpthread
+//kompilieren: gcc -Ofast threadrun.c hifihat.c -o XXX -li2c -lpthread
 
 // Einbinden von Headerdateien
 #include <stdio.h>			// u.a. fuer printf()
@@ -157,6 +157,7 @@ int main(				// Rueckgabewert: EXIT_SUCCESS bei fehlerfreiem Abschluss der Funkt
 		pthread_kill(t_socket,SIGINT); //stops the socket block
 		//pthread_join(t_socket,NULL);
 	}
+
 	hifihatShutdown(fd_adc_i2c,fd_dac_i2c);
 	
 	return ret;

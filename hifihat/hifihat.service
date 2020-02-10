@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=no
 RestartSec=1
-ExecStart=/home/pi/hifihat/socket/hifihat
+ExecStart=/home/pi/hifihat/hifihat/socket/hifihat
 ExecStop=pkill -2 hifihat&&sudo rm /run/lock/hifihat.lock
 
 [Install]

@@ -472,7 +472,7 @@ int hifihatSetup(//volatile ulong * p_mmap,
 	int i2s_action = I2S_FILTER;	// speichert den vom Nutzer gewaehlten Funktionswunsch (siehe #define I2S_...)
 	int ret = EXIT_SUCCESS;			// Rueckgabewert
 	FILE *p_file = NULL;			// Zeiger fuer Datei-Handle
-//	volatile ulong *p_mmap = NULL;	// Zeiger auf den per mmap() geteilten Speicher
+	volatile ulong *p_mmap = NULL;	// Zeiger auf den per mmap() geteilten Speicher
 	ulong cnt = 0;					// Zaehl-Variable
 	
 	

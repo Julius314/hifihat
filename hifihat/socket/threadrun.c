@@ -25,8 +25,8 @@ volatile ulong *p_mmap = NULL;
 volatile int socketInt = 0;
 
 //default filter coefficients
-char *c_l = "/home/pi/hifihat/Coeffs/48000/42_comp_bb_l.raw";
-char *c_r = "/home/pi/hifihat/Coeffs/48000/42_comp_bb_r.raw";
+char *c_l = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_bb_l.raw";
+char *c_r = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_bb_r.raw";
 
 //function responsible for filtering
 void *f_filter(void *vargp){
@@ -94,29 +94,29 @@ void *f_socket(void *vargp){
 
 		if(strcmp(buffer,"c0") == 0){
 			response = "Switching to flat response.\n";
-			c_l = "/home/pi/hifihat/Coeffs/48000/42_comp_l.raw";
-			c_r = "/home/pi/hifihat/Coeffs/48000/42_comp_r.raw";
+			c_l = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_l.raw";
+			c_r = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_r.raw";
 
 			socketInt = 1;
 		}			
 		else if(strcmp(buffer,"c1") == 0){
 			response = "Switching to flat bass boost.\n";
-			c_l = "/home/pi/hifihat/Coeffs/48000/42_comp_bb_l.raw";
-			c_r = "/home/pi/hifihat/Coeffs/48000/42_comp_bb_r.raw";
+			c_l = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_bb_l.raw";
+			c_r = "/home/pi/hifihat/hifihat/Coeffs/48000/42_comp_bb_r.raw";
 
 			socketInt = 1;
 		}			
 		else if(strcmp(buffer,"c2") == 0){
 			response = "Switching to less base.\n";
-			c_l = "/home/pi/hifihat/Coeffs/48000/42_nobase_l.raw";
-			c_r = "/home/pi/hifihat/Coeffs/48000/42_nobase_r.raw";
+			c_l = "/home/pi/hifihat/hifihat/Coeffs/48000/42_nobase_l.raw";
+			c_r = "/home/pi/hifihat/hifihat/Coeffs/48000/42_nobase_r.raw";
 
 			socketInt = 1;
 		}		
 		else if(strcmp(buffer,"c3") == 0){
 			response = "Switching to flat unequalized.\n";
-			c_l = "/home/pi/hifihat/Coeffs/48000/42_cross_l.raw";
-			c_r = "/home/pi/hifihat/Coeffs/48000/42_cross_r.raw";
+			c_l = "/home/pi/hifihat/hifihat/Coeffs/48000/42_cross_l.raw";
+			c_r = "/home/pi/hifihat/hifihat/Coeffs/48000/42_cross_r.raw";
 
 			socketInt = 1;
 		}			

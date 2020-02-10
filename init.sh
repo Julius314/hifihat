@@ -21,3 +21,5 @@ sudo cp hifihat/socket/cc /usr/local/bin/cc
 #create service
 sudo cp hifihat/hifihat.service /etc/systemd/system/hifihat.service
 sudo systemctl enable hifihat
+
+sudo reboot now

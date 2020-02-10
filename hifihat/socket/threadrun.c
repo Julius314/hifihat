@@ -149,13 +149,14 @@ int main(				// Rueckgabewert: EXIT_SUCCESS bei fehlerfreiem Abschluss der Funkt
 
 	ret = hifihatSetup(fd_adc_i2c, fd_dac_i2c, f_sample);
     
-	pthread_create(&t_filter, NULL, f_filter,NULL);
-    pthread_create(&t_socket, NULL, f_socket, NULL);
-	pthread_join(t_filter,NULL);
-	
-	pthread_kill(t_socket,SIGINT); //stops the socket block
-	//pthread_join(t_socket,NULL);
-
+	if(ret == EXIT_SUCCESS){
+		pthread_create(&t_filter, NULL, f_filter,NULL);
+		pthread_create(&t_socket, NULL, f_socket, NULL);
+		pthread_join(t_filter,NULL);
+		
+		pthread_kill(t_socket,SIGINT); //stops the socket block
+		//pthread_join(t_socket,NULL);
+	}
 	hifihatShutdown(fd_adc_i2c,fd_dac_i2c);
 	
 	return ret;
